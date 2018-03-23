@@ -8,8 +8,9 @@ import {
 } from 'react-native';
 
 import Login from './src/pages/Login';
+import { Tabs } from './src/config/Tabs';
 
-export default class App extends Component<{}> {
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>

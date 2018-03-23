@@ -9,7 +9,7 @@ import {
 import Logo from '../components/Logo';
 import Form from '../components/Form';
 
-export default class Login extends Component <{}>{
+export default class Login extends Component {
   render() {
     return(
       <View style={styles.container}>
