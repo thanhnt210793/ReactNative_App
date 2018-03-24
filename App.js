@@ -8,14 +8,12 @@ import {
 } from 'react-native';
 
 import Login from './src/pages/Login';
-import { Tabs } from './src/config/Tabs';
+import { Tabs } from './src/config/Tabs/index';
 
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Login />
-      </View>
+        <Tabs />
     );
   }
 }

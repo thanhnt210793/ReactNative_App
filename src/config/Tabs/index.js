@@ -1,14 +1,18 @@
-import React from 'react';
-import { Image } from 'react-native';
-import { StackNavigator, TabNavigator } from 'react-navigation';
+import React, { Component } from 'react';
+import { Image, View, Text } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { TabNavigator, TabBarBottom } from 'react-navigation';
 
-import { HomeStack } from './HomeStack';
-import { FriendsStack } from './FriendsStack';
-import { ProfileStack } from './ProfileStack';
-import { FindStack } from './FindStack';
+import { HomeStack } from '../HomeStack/index';
+import { FriendsStack } from '../FriendsStack/index';
+import { ProfileStack } from '../ProfileStack/index';
+import { FindStack } from '../FindStack/index';
 
-import homeIcon from '../images/home-icon.png';
-import profileIcon from '../images/user-icon.png';
+import homeIcon from '../../images/home-icon.png';
+import profileIcon from '../../images/user-icon.png';
+import friendIcon from '../../images/Friend.png';
+import findIcon from '../../images/find.png';
+import styles from './styles';
 
 export const Tabs = TabNavigator({
     Home: {
@@ -42,7 +46,7 @@ export const Tabs = TabNavigator({
         tabBarIcon: ({ tintColor }) => (
           <Image
             style={[styles.icon, { tintColor }]}
-            source={profileIcon}
+            source={friendIcon}
           />
         ),
       },
@@ -54,9 +58,19 @@ export const Tabs = TabNavigator({
         tabBarIcon: ({ tintColor }) => (
           <Image
             style={[styles.icon, { tintColor }]}
-            source={profileIcon}
+            source={findIcon}
           />
         ),
       },
     },
+  },
+  {    
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    },
+    tabBarComponent: TabBarBottom,
+    tabBarPosition: 'bottom',
+    animationEnabled: false,
+    swipeEnabled: false,
   });

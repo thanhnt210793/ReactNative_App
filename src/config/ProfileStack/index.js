@@ -1,8 +1,9 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { StackNavigator, TabNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 
-import Profile from '../pages/Profile';
+import Profile from '../../pages/Profile/index';
+import UserDetail from '../../pages/Profile/UserDetail/index';
 
 export const ProfileStack = StackNavigator({
     Profile: {
@@ -10,5 +11,11 @@ export const ProfileStack = StackNavigator({
       navigationOptions: {
         headerTitle: 'Profile',
     },
+    UserDetail: {
+      screen: UserDetail,
+      navigationOptions: {
+        headerTitle: 'User Detail'
+      }
+    }
   }
 });

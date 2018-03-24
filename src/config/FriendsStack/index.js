@@ -2,7 +2,7 @@ import React from 'react';
 import { Image } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 
-import Friends from '../pages/Friends';
+import Friend from '../../pages/Friends/index';
 
 export const FriendsStack = StackNavigator({
     Friends: {
