@@ -1,50 +1,60 @@
 import React, { Component } from 'react';
 import {
-  StatusBar,
   StyleSheet,
   Text,
-  View
+  View,
+  StatusBar ,
+  TouchableOpacity
 } from 'react-native';
 
 import Logo from '../components/Logo';
-import Form from '../components/Form';
+import FormLog from '../components/FormLog';
 
-export default class Login extends Component {
-  render() {
-    return(
-      <View style={styles.container}>
-          <Logo/>
-          <Form/>
-          <View style={styles.signupTextCont}>
-              <Text style={styles.signupText}>Dont have an account yet?</Text>
-              <Text style={styles.signupButton}> Signup</Text>
-          </View>
-      </View>
-      )
-  }
+import {Actions} from 'react-native-router-flux';
+
+export default class Login extends Component<{}> {
+
+	signup() {
+		Actions.signup()
+	}
+
+	render() {
+		return(
+			<View style={styles.container}>
+				<Logo/>
+				<FormLog/>
+				<View style={styles.signupTextCont}>
+					<Text style={styles.signupText}>Dont have an account yet?</Text>
+					<TouchableOpacity onPress={this.signup}>
+          <Text style={styles.signupButton}> Signup</Text>
+          </TouchableOpacity>
+				</View>
+			</View>
+			)
+	}
 }
 
 const styles = StyleSheet.create({
   container : {
-    backgroundColor : '#fce4ec',
+    backgroundColor:'#fce4ec',
     flex: 1,
-    alignItems  : 'center',
-    justifyContent : 'center'
+    alignItems:'center',
+    justifyContent :'center'
   },
-  signupTextCont:{
-    flexGrow: 1,
-    alignItems  : 'flex-end',
-    justifyContent : 'center',
+  signupTextCont : {
+  	flexGrow: 1,
+    alignItems:'flex-end',
+    justifyContent :'center',
     paddingVertical:16,
     flexDirection:'row'
   },
-  signupText:{
-    color:'#8e8e8e',
-    fontSize:16
+  signupText: {
+  	color:'#8e8e8e',
+  	fontSize:16
   },
   signupButton: {
-    color: '#373737',
-    fontSize:16,
-    fontWeight:'500'
+  	color:'#373737',
+  	fontSize:16,
+  	fontWeight:'500'
   }
 });
