@@ -1,31 +1,32 @@
 import React, { Component } from 'react';
 import {
-  Image,
   StyleSheet,
   Text,
-  View
+  View,
+   Image
 } from 'react-native';
 
-export default class Logo extends Component<{}>{
-  render(){
-    return(
-      <View style={styles.container}>
-          <Image  style={{width: 180, height: 180}}
-                source={require('../images/Like-logo-mark-design-1.jpg')}/>
-          <Text style={styles.logoText}>Welcome to My app</Text>
-      </View>
-      )
-  }
+export default class Logo extends Component<{}> {
+	render(){
+		return(
+			<View style={styles.container}>
+				<Image  style={{width:200, height: 200}}
+          			source={require('../images/logotim.jpg')}/>
+          		<Text style={styles.logoText}>WELLCOME</Text>
+  			</View>
+			)
+	}
 }
 
 const styles = StyleSheet.create({
-  container :{
+  container : {
     flexGrow: 1,
-    alignItems  : 'center',
-    justifyContent : 'center'
+    justifyContent:'flex-end',
+    alignItems: 'center'
   },
-  logoText: {
-    fontSize:18,
-    color:'black'
+  logoText : {
+  	marginVertical: 15,
+  	fontSize:18,
+  	color:'black'
   }
 });
